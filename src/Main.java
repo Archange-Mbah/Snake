@@ -1,17 +1,20 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+
+import processing.core.PApplet;
+import Model.*;
+import Controller.*;
+import View.*;
+public  final class Main {
     public static void main(String[] args) {
-        // Press Alt+Eingabe with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Umschalt+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        final int GAME_SIZE = 700;
+        var view = new View(GAME_SIZE,GAME_SIZE);
+        var model = new SnakeModel();
+        var controller = new Controller();
+        controller.setModel(model);
+        controller.setView(view);
+        view.setController(controller);
 
-            // Press Umschalt+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Strg+F8.
-            System.out.println("i = " + i);
-        }
+
+        PApplet.runSketch(new String[]{"SnakeGame"}, view);
     }
 }
