@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3c72293-69d5-4352-918f-9004a2d4144c" name="Changes" comment="initial">
+    <list default="true" id="e3c72293-69d5-4352-918f-9004a2d4144c" name="Changes" comment="Model Compoleted">
       <change afterPath="$PROJECT_DIR$/lib/controlP5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/core.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Controller/Icontroller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Direction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/GameState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/SnakeModel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/View/Iview.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/View/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ModelSnake.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/SnakeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SnakeModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +59,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "E:/3/PIS/U",
+    "last_opened_file_path": "E:/3/PIS/Snake",
     "onboarding.tips.debug.path": "E:/3/PIS/Snake/src/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -153,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697768172327</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Model Compoleted">
+      <option name="closed" value="true" />
+      <created>1701691646372</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701691646372</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,7 +169,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="Model Compoleted" />
+    <option name="LAST_COMMIT_MESSAGE" value="Model Compoleted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -181,7 +182,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/View/View.java</url>
-          <line>49</line>
+          <line>53</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

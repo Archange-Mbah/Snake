@@ -176,9 +176,7 @@ public class SnakeModel {
     * @return true if the snake collides with the x wall, false otherwise
  */
   public boolean collissionWithYWall(){
-      if(snake.getyCoordinates().get(0)<0 || snake.getyCoordinates().get(0)>width){
-          return true;
-      }
+
       return false;
   }
    /**
@@ -207,7 +205,11 @@ public class SnakeModel {
     else if (snake.getxCoordinates().get(0)>width-1){
         snake.getxCoordinates().set(0,0);
     }
-  
+    else if(snake.getyCoordinates().get(0)<0){
+        snake.getyCoordinates().set(0,height-1);
+    }
+    else if(snake.getyCoordinates().get(0)>height-1)
+        snake.getyCoordinates().set(0,0);
 }
  
 
