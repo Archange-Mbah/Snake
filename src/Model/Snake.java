@@ -62,42 +62,6 @@ public class Snake {
         return direction;
     }
 
-    /**
-     * This method is used to increase the size of the snake by adding a new coordinate to the x and y coordinates array lists
-     * @param x
-     
-     */
-    public void increaseSizex(int x){
-        xCoordinates.add(x);
-    }
-    /**
-     * This method is used to increase the size of the snake by adding a new coordinate to the x and y coordinates array lists
-     * @param y
-     */
-    public void increaseSizey( int y){
-        yCoordinates.add(y);
-    }
-
-    /**
-     * This method is used to decrease the size of the snake by removing the last coordinate from the x and y coordinates array lists
-     * @param index
-     */
-    public void decreaseSizex(int index){
-        if (index >= 0 && index < xCoordinates.size()) xCoordinates.remove(index);
-        else throw new IndexOutOfBoundsException("Index out of Bounds");
-    }
-    /**
-     * This method is used to decrease the size of the snake by removing the last coordinate from the x and y coordinates array lists
-     * @param index
-     */
-    public void decreaseSizey(int index){
-
-        yCoordinates.remove(index);
-    }
-     /**
-      * This method is used to get the x coordinate of the snake's head
-        * @return xCoordinates.get(0)
-     */
     @Override
     public String toString() {
         String s="";

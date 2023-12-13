@@ -6,8 +6,9 @@ import View.*;
 public  final class Main {
     public static void main(String[] args) {
 
-        final int GAME_SIZE = 700;
-        var view = new View(GAME_SIZE,GAME_SIZE);
+        final int SIZE1 = 875;
+        final int SIZE2=700;
+        var view = new View(SIZE1,SIZE2);
         var model = new SnakeModel();
         var controller = new Controller();
         controller.setModel(model);

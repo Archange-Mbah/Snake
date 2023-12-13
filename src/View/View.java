@@ -1,9 +1,10 @@
 package View;
 
 import Controller.Icontroller;
-import processing.core.PApplet;
-import processing.core.PImage;
-import controlP5.*;
+import processing.core.*;
+
+
+
 
 import java.util.List;
 
@@ -12,14 +13,21 @@ public class View  extends PApplet implements Iview{
 
     private final int block = 35;
 
-    PImage menu;
-    PImage playing;
-    PImage gameOVer;
-    PImage badFood;
-    int r,g,b;
+
+    private PImage menu;
+    private PImage playing;
+    private PImage gameOver2;
+    private PImage poison ;
+    private PImage wellDone;
+    private int message,time;
+    private final int duration=100;
+    private PImage looser2;
 
 
-    PImage goodFood;
+    private int r,g,b;
+
+
+    private PImage goodFood;
 
     public void setController(Icontroller c){
         this.controller =c;
@@ -35,10 +43,16 @@ public class View  extends PApplet implements Iview{
 
     public void setup(){
         frameRate(6);
+        looser2=loadImage("looser2.jpg");
+        looser2.resize(120,120);
+        gameOver2=loadImage("gameOver2.jpg");
+        gameOver2.resize(width,height);
+        wellDone=loadImage("welldone.jpg");
+        wellDone.resize(120, 120);
         goodFood = loadImage("apfel.jpg");
         goodFood.resize(block,block);
-        badFood=loadImage("mushroom.jpg");
-        badFood.resize(block,block);
+        poison=loadImage("poison.jpg");
+        poison.resize(block,block);
         menu=loadImage("menu.jpg");
         playing=loadImage("playing.jpg");
         playing.resize(width,height);
@@ -61,15 +75,17 @@ public class View  extends PApplet implements Iview{
         }
     }
 
+
     public void drawMenu(){
         background(menu);
         super.textAlign(CENTER, CENTER);
         super.noStroke();
         super.textSize(40);
-        super.text("**Welcom to Snake Game** ", width / 2 - 50, height / 4 - 10);
-        super.textSize(30);
-        super.fill(255);
-        super.text("Press Enter key to start", width / 2 - 70, height / 2 - 80);
+         fill(24,50,100);
+        super.text("Welcome to Snake Game", width/2 - 50, height  - 50);
+        super.textSize(40);
+        fill(24,50,100);
+        super.text("Press Enter key to start", width / 2 - 70, height  - 90);
     }
 
     public void drawGame(){
@@ -87,11 +103,38 @@ public class View  extends PApplet implements Iview{
          text("Score: " +c,10,10, width -20, 50);
     }
     public void drawBadFood(int foodX, int foodY) {
-        super.image(badFood,foodX*block,foodY*block);
+        super.image(poison,foodX*block,foodY*block);
         //super.rect(foodX * block, foodY * block, block, block);
     }
+    public void drawMessage() {
+            switch (message) {
+                case 1:
+                    super.image(wellDone, 300, block);
+                    super.image(wellDone, 300, block);
+                    fill(0);
+                    super.text("NICE TRY", 600, 70);
+                    break;
+                case 2:
+                    super.image(looser2,300,block);
+                    super.image(looser2,300,block);
+                    fill(0);
+                    super.text("LOOSER",600,70);
+                    break;
+            }
+        }
+
+    public boolean isTimeSmallerAsDuration(){
+        return (time<0);
+    }
+
+    public void setMessageToBePrinted(int a){
+         message=a;
+    }
+
     public void drawGoodFood(int foodX, int foodY) {
         super.image(goodFood,foodX*block,foodY*block);
     }
-
+    public void drawGameOver(){
+        background(gameOver2);
+    }
 }

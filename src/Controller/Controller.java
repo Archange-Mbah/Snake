@@ -1,20 +1,24 @@
 package Controller;
 
-import Model.Direction;
+import Model.Imodel;
 import Model.GameState;
-import Model.SnakeModel;
+import Model.Direction;
 import View.Iview;
 
 public class Controller implements Icontroller {
 
     private Iview view;
-    private SnakeModel snakeGame;
+
+    private Imodel  snakeGame;
+
+    private int duration=120;
+
 
     public void setView(Iview v) {
         this.view = v;
     }
 
-    public void setModel(SnakeModel s) {
+    public void setModel(Imodel  s) {
         this.snakeGame = s;
     }
 
@@ -22,39 +26,40 @@ public class Controller implements Icontroller {
         if (snakeGame.getState() == GameState.MENU) {
             snakeGame.setState(GameState.PLAYING);
         }
-
-
     }
 
     public void nextFrame() {
         if (snakeGame.getState() == GameState.MENU) {
             view.drawMenu();
-        } else if (snakeGame.getState() == GameState.PLAYING) {
-            snakeGame.play();
+        }
+        else if (snakeGame.getState() == GameState.PLAYING) {
             view.drawGame();
+            snakeGame.play();
+            view.drawMessage();
+            view.setMessageToBePrinted(snakeGame.getMessageNumber());
             view.drawSnake(snakeGame.getSnake().getxCoordinates(),snakeGame.getSnake().getyCoordinates(),snakeGame.getScore());
             view.drawBadFood(snakeGame.getBadFood().getX(),snakeGame.getBadFood().getY());
             view.drawGoodFood(snakeGame.getGoodFood().getX(),snakeGame.getGoodFood().getY());
 
         }
-    }
-
-    public void setDirection(int a) {
-
+        else{
+            view.drawGameOver();
+        }
     }
 
     public void userInput(int input) {
         if(snakeGame.getState()==GameState.MENU && input==0){
             snakeGame.setState(GameState.PLAYING);
         }
-       if(input==1 && snakeGame.getSnake().getDirection()!=Direction.RIGHT )
+       if(input==1 && snakeGame.getDirection()!=Direction.RIGHT )
            snakeGame.setDirection(Direction.LEFT);
-        if(input==2&& snakeGame.getSnake().getDirection()!=Direction.LEFT)
+        if(input==2&& snakeGame.getDirection()!=Direction.LEFT)
             snakeGame.setDirection(Direction.RIGHT);
-        if(input==3 && snakeGame.getSnake().getDirection()!=Direction.DOWN )
+        if(input==3 && snakeGame.getDirection()!=Direction.DOWN )
              snakeGame.setDirection(Direction.UP);
-        if(input ==4 && snakeGame.getSnake().getDirection()!=Direction.UP)
+        if(input ==4 && snakeGame.getDirection()!=Direction.UP)
             snakeGame.setDirection(Direction.DOWN);
         }
-    }
+
+}
 

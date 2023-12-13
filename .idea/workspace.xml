@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3c72293-69d5-4352-918f-9004a2d4144c" name="Changes" comment="Model Compoleted">
-      <change afterPath="$PROJECT_DIR$/lib/controlP5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Icontroller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/Iview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/View.java" afterDir="false" />
+    <list default="true" id="e3c72293-69d5-4352-918f-9004a2d4144c" name="Changes" comment="View and model started">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/SnakeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SnakeModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "E:/3/PIS/Snake",
+    "last_opened_file_path": "E:/3/Compilerbau",
     "onboarding.tips.debug.path": "E:/3/PIS/Snake/src/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -153,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701691646372</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="View and model started">
+      <option name="closed" value="true" />
+      <created>1701697488264</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701697488264</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,7 +173,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
     <MESSAGE value="Model Compoleted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model Compoleted" />
+    <MESSAGE value="View and model started" />
+    <option name="LAST_COMMIT_MESSAGE" value="View and model started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -182,7 +186,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/View/View.java</url>
-          <line>53</line>
+          <line>54</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
