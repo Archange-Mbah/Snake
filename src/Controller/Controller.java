@@ -36,6 +36,8 @@ public class Controller implements Icontroller {
             view.drawGame();
             snakeGame.play();
             view.drawMessage();
+            view.drawMessage2();
+            view.drawMessage3();
             view.setMessageToBePrinted(snakeGame.getMessageNumber());
             view.drawSnake(snakeGame.getSnake().getxCoordinates(),snakeGame.getSnake().getyCoordinates(),snakeGame.getScore());
             view.drawBadFood(snakeGame.getBadFood().getX(),snakeGame.getBadFood().getY());

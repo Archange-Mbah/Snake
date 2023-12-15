@@ -14,7 +14,9 @@ public interface Iview {
     void drawGoodFood(int a, int b);
 
     void setMessageToBePrinted(int a);
-    boolean isTimeSmallerAsDuration();
+
     void  drawMessage();
     void drawGameOver();
+    void drawMessage2();
+    void drawMessage3();
 }

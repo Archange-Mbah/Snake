@@ -5,6 +5,8 @@ package Model;
  * The java.util.Random class is used to generate a stream of pseudorandom numbers.
  */
 import  java.util.Random;
+import java.util.stream.IntStream;
+
 /**
  * SnakeModel is used to create a  snake game Model
  */
@@ -17,17 +19,14 @@ public class SnakeModel implements Imodel{
     /**
      * goodfood is an object of the Food class
      */
-    private final Food goodfood;
-    private final Food badFood;
-    private GameState state;
-    private final int width=25;
-    private final int height=20;
+    private final Food goodfood,badFood;
 
-    private int messageNumber=0;
+    private GameState state;
+    private final int width=25,height=20;
+
+    private int messageNumber=0,score=0,timer=0;
     Random rand= new Random();
 
-
-    private  int score=0;
 
     public static void main(String[] args){
         
@@ -43,7 +42,7 @@ public class SnakeModel implements Imodel{
     public SnakeModel(){
         SnakeThread snakeThread = new SnakeThread(this); //create a new SnakeThread object and pass it the SnakeModel object
         snakeThread.start(); //start the thread
-        snake=new Snake(0,5,Direction.RIGHT);
+        snake=new Snake(0,0,Direction.RIGHT);
         goodfood= new Food(rand.nextInt(0,width),rand.nextInt(0,width),true);
         badFood= new Food(rand.nextInt(0,width),rand.nextInt(0,height),false);
         state=GameState.MENU;
@@ -103,9 +102,8 @@ public class SnakeModel implements Imodel{
     public Direction  getDirection(){
         return snake.getDirection();
     }
-    public void generateFood(Food f){     // to generate a new food..
+    public void generateFood(Food f){
         f.setX(rand.nextInt(0,width));
-                                          //system.out.printLn("foodx"+f);
         f.setY(rand.nextInt(0,width));
     }
 
@@ -113,17 +111,11 @@ public class SnakeModel implements Imodel{
      * This method is used to check if the game is over
      * @return true if the game is over, false otherwise
      */
-     public boolean isGameOver(){ // do this with lambda ausdruck
-         for(int i=1;i<snake.getxCoordinates().size();i++){
-                        if(snake.getxCoordinates().get(0)==snake.getxCoordinates().get(i)
-                        && snake.getyCoordinates().get(0)==snake.getyCoordinates().get(i))
-                        {    snake.getxCoordinates().clear();
-                             snake.getyCoordinates().clear();
-                              return true;
-                        }
-         }
-            return false;
-     }
+    public boolean isGameOver() {
+        return IntStream.range(1, snake.getxCoordinates().size())
+                .anyMatch(i -> snake.getxCoordinates().get(0) == snake.getxCoordinates().get(i)
+                        && snake.getyCoordinates().get(0) == snake.getyCoordinates().get(i));
+    }
      private void move(){
              for(int i = snake.getxCoordinates().size()-1;i>0;i--) {
                  snake.getxCoordinates().set(i,snake.getxCoordinates().get(i-1)) ;
@@ -146,25 +138,26 @@ public class SnakeModel implements Imodel{
        continueOnOppositeWall();
       if(getState()==GameState.PLAYING) {
         move();
-        if (collissionWithGoodFood()) {// if the snake eats the food increase the size of the snake and generate a new food, increase the score by 1
+        if (collissionWithFood(goodfood)) {// if the snake eats the food increase the size of the snake and generate a new food, increase the score by 1
             score++;
             messageNumber=1;
             generateFood(goodfood);
-            snake.getxCoordinates().add(0, snake.getxCoordinates().get(0) + (snake.getDirection() == Direction.RIGHT ? 1 :
+            snake.increaseSize();
+            /*snake.getxCoordinates().add(0, snake.getxCoordinates().get(0) + (snake.getDirection() == Direction.RIGHT ? 1 :
                     (snake.getDirection() == Direction.LEFT ? -1 : 0)));
             snake.getyCoordinates().add(0, snake.getyCoordinates().get(0) + (snake.getDirection() == Direction.DOWN ? 1 :
-                    (snake.getDirection() == Direction.UP ? -1 : 0)));
+                    (snake.getDirection() == Direction.UP ? -1 : 0)));*/
             System.out.println("collission With Good Food With good food");
             generateFood(goodfood);
         }
-        if (collissionWithBadFood()) {// if the snake eats the food increase the size of the snake and generate a new food, increase the score by 1
+        if (collissionWithFood(badFood)) {// if the snake eats the food increase the size of the snake and generate a new food, increase the score by 1
             score--;
             messageNumber = 2;
             System.out.println("collission WithFood With bad food");
             generateFood(badFood);
             if (this.state != GameState.GAMEOVER && snake.getxCoordinates().size() > 2) {
-                snake.getxCoordinates().remove(snake.getxCoordinates().size() - 1);
-                snake.getyCoordinates().remove(snake.getyCoordinates().size() - 1);
+                /*snake.getxCoordinates().remove(snake.getxCoordinates().size() - 1);
+                snake.getyCoordinates().remove(snake.getyCoordinates().size() - 1);*/
             } else setState(GameState.GAMEOVER);
         }
 
@@ -180,12 +173,15 @@ public class SnakeModel implements Imodel{
 
  * @return true if the snake collides with the food, false otherwise
  */
- public  boolean collissionWithGoodFood(){
+public boolean collissionWithFood(Food f){
+    return snake.getxCoordinates().get(0) == f.getX() && snake.getyCoordinates().get(0) == f.getY();
+}
+ /*public  boolean collissionWithGoodFood(){
      return snake.getxCoordinates().get(0) == goodfood.getX() && snake.getyCoordinates().get(0) == goodfood.getY();
  }
  public boolean collissionWithBadFood(){
      return snake.getxCoordinates().get(0) == badFood.getX() && snake.getyCoordinates().get(0) == badFood.getY();
- }
+ }*/
  public int getMessageNumber(){
      return  messageNumber;
  }
@@ -222,7 +218,6 @@ public class SnakeModel implements Imodel{
   @Override
   public String  toString(){
     String s="";
-
     s+="Snake: "+snake.toString()+"\n";
     s+=" The good Food: "+getBadFood().toString()+"\n";
     s+=" The bad Food: "+getGoodFood().toString()+"\n";
@@ -230,6 +225,4 @@ public class SnakeModel implements Imodel{
     s+="State: "+getState()+"\n";
     return s;
   }
-  
-  
 }

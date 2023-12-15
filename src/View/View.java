@@ -19,15 +19,14 @@ public class View  extends PApplet implements Iview{
     private PImage gameOver2;
     private PImage poison ;
     private PImage wellDone;
-    private int message,time;
+    private int message,frame;
     private final int duration=100;
     private PImage looser2;
-
-
-    private int r,g,b;
-
+    private int r,g,b, yPosTop, yPosBottom;
 
     private PImage goodFood;
+    String topText = "Welcome to snakeGame";
+    String bottomText = "press enter to start";
 
     public void setController(Icontroller c){
         this.controller =c;
@@ -42,7 +41,11 @@ public class View  extends PApplet implements Iview{
     }
 
     public void setup(){
-        frameRate(6);
+        frameRate(7);
+        textAlign(CENTER, CENTER);
+        textSize(24);
+        yPosTop = -50; // Start above the canvas
+        yPosBottom = height + 50;
         looser2=loadImage("looser2.jpg");
         looser2.resize(120,120);
         gameOver2=loadImage("gameOver2.jpg");
@@ -77,18 +80,24 @@ public class View  extends PApplet implements Iview{
 
 
     public void drawMenu(){
-        background(menu);
-        super.textAlign(CENTER, CENTER);
-        super.noStroke();
-        super.textSize(40);
-         fill(24,50,100);
-        super.text("Welcome to Snake Game", width/2 - 50, height  - 50);
-        super.textSize(40);
-        fill(24,50,100);
-        super.text("Press Enter key to start", width / 2 - 70, height  - 90);
+        frameRate(30);
+        if(yPosTop < height / 2 - 20) background(0);
+        else background(menu);
+        // Move text towards the middle until they meet
+        if (yPosTop < height / 2 - 20) {
+            yPosTop += 1;
+            yPosBottom -= 1;
+        }
+
+
+        // Display text at updated positions
+        fill(255);
+        text(topText, width / 2, yPosTop);
+        text(bottomText, width / 2, yPosBottom);
     }
 
     public void drawGame(){
+        frameRate(7);
         background(playing);
     }
     public void drawSnake(List<Integer> x, List<Integer> y,int c){
@@ -122,10 +131,40 @@ public class View  extends PApplet implements Iview{
                     break;
             }
         }
-
-    public boolean isTimeSmallerAsDuration(){
-        return (time<0);
+    public void drawMessage2() {
+        switch (message) {
+            case 1:
+                super.image(wellDone, 300, block);
+                super.image(wellDone, 300, block);
+                fill(0);
+                super.text("NICE TRY", 600, 70);
+                break;
+            case 2:
+                super.image(looser2,300,block);
+                super.image(looser2,300,block);
+                fill(0);
+                super.text("LOOSER",600,70);
+                break;
+        }
     }
+    public void drawMessage3() {
+        switch (message) {
+            case 1:
+                super.image(wellDone, 300, block);
+                super.image(wellDone, 300, block);
+                fill(0);
+                super.text("NICE TRY", 600, 70);
+                break;
+            case 2:
+                super.image(looser2,300,block);
+                super.image(looser2,300,block);
+                fill(0);
+                super.text("LOOSER",600,70);
+                break;
+        }
+    }
+
+
 
     public void setMessageToBePrinted(int a){
          message=a;
