@@ -19,22 +19,14 @@ public class SnakeModel implements Imodel{
     /**
      * goodfood is an object of the Food class
      */
-    private final Food goodfood,badFood;
+    private final Food goodfood,badFood,neutralFood;
 
     private GameState state;
-    private final int width=25,height=20;
+    private final int width=25,height=20,MAXIMUMSCORE=10;
 
-    private int messageNumber=0,score=0,timer=0;
+    private int messageNumber=0,score=0,time=700;
     Random rand= new Random();
 
-
-    public static void main(String[] args){
-        
-        Snake s= new Snake(3,4,Direction.DOWN);
-        SnakeModel c= new SnakeModel();
-        System.out.println(s);
-        System.out.println(c);
-    }
 
     /**
      * This constructor is used to create a SnakeModel object
@@ -43,10 +35,14 @@ public class SnakeModel implements Imodel{
         SnakeThread snakeThread = new SnakeThread(this); //create a new SnakeThread object and pass it the SnakeModel object
         snakeThread.start(); //start the thread
         snake=new Snake(0,0,Direction.RIGHT);
-        goodfood= new Food(rand.nextInt(0,width),rand.nextInt(0,width),true);
-        badFood= new Food(rand.nextInt(0,width),rand.nextInt(0,height),false);
+        goodfood= new Food(rand.nextInt(0,width),rand.nextInt(0,width));
+        badFood= new Food(rand.nextInt(0,width),rand.nextInt(0,height));
+        neutralFood= new Food(rand.nextInt(0,width),rand.nextInt(0,height));
         state=GameState.MENU;
-
+    }
+    public static void main(String[] args){
+        SnakeModel s= new SnakeModel();
+        System.out.println(s);
     }
 
     /**
@@ -70,6 +66,7 @@ public class SnakeModel implements Imodel{
     public Food getBadFood(){
         return badFood;
     }
+    public Food getNeutralFood(){return neutralFood;}
     /**
      * This method is used to get the state of the game
      * @return state
@@ -92,6 +89,9 @@ public class SnakeModel implements Imodel{
         snake.setDirection(direction);
         System.out.println(snake);
     }
+    public int getTime(){
+        return time;
+    }
 
 
     /**
@@ -112,6 +112,7 @@ public class SnakeModel implements Imodel{
      * @return true if the game is over, false otherwise
      */
     public boolean isGameOver() {
+        if(time==0 && score<MAXIMUMSCORE)return true;
         return IntStream.range(1, snake.getxCoordinates().size())
                 .anyMatch(i -> snake.getxCoordinates().get(0) == snake.getxCoordinates().get(i)
                         && snake.getyCoordinates().get(0) == snake.getyCoordinates().get(i));
@@ -130,11 +131,14 @@ public class SnakeModel implements Imodel{
       * This method is used to play the game
       */
    public void play(){
+       time--;
        messageNumber=0;
        if(isGameOver()){
            setState(GameState.GAMEOVER);
            System.out.println("GameOver you loose");
        }
+       else if (score>MAXIMUMSCORE) setState(GameState.WIN); ;
+
        continueOnOppositeWall();
       if(getState()==GameState.PLAYING) {
         move();
@@ -150,12 +154,20 @@ public class SnakeModel implements Imodel{
             System.out.println("collission With Good Food With good food");
             generateFood(goodfood);
         }
+          if (collissionWithFood(neutralFood)) {// if the snake eats the food increase the size of the snake and generate a new food, increase the score by 1
+              messageNumber=3;
+              generateFood(neutralFood);
+
+              System.out.println("collission With Neutral Food With good food");
+              generateFood(neutralFood);
+          }
         if (collissionWithFood(badFood)) {// if the snake eats the food increase the size of the snake and generate a new food, increase the score by 1
             score--;
             messageNumber = 2;
             System.out.println("collission WithFood With bad food");
             generateFood(badFood);
             if (this.state != GameState.GAMEOVER && snake.getxCoordinates().size() > 2) {
+                snake.decreaseSize();
                 /*snake.getxCoordinates().remove(snake.getxCoordinates().size() - 1);
                 snake.getyCoordinates().remove(snake.getyCoordinates().size() - 1);*/
             } else setState(GameState.GAMEOVER);
@@ -176,12 +188,7 @@ public class SnakeModel implements Imodel{
 public boolean collissionWithFood(Food f){
     return snake.getxCoordinates().get(0) == f.getX() && snake.getyCoordinates().get(0) == f.getY();
 }
- /*public  boolean collissionWithGoodFood(){
-     return snake.getxCoordinates().get(0) == goodfood.getX() && snake.getyCoordinates().get(0) == goodfood.getY();
- }
- public boolean collissionWithBadFood(){
-     return snake.getxCoordinates().get(0) == badFood.getX() && snake.getyCoordinates().get(0) == badFood.getY();
- }*/
+
  public int getMessageNumber(){
      return  messageNumber;
  }
@@ -218,7 +225,7 @@ public boolean collissionWithFood(Food f){
   @Override
   public String  toString(){
     String s="";
-    s+="Snake: "+snake.toString()+"\n";
+    s+="Snake: "+snake.toString()+ "  pos: "+ "("+snake.getxCoordinates().getFirst() +","+snake.getyCoordinates().getFirst()+")"+"\n";
     s+=" The good Food: "+getBadFood().toString()+"\n";
     s+=" The bad Food: "+getGoodFood().toString()+"\n";
     s+="Score: "+getScore()+"\n";
@@ -226,3 +233,14 @@ public boolean collissionWithFood(Food f){
     return s;
   }
 }
+/* Zeit der Stickers
+* Jshell.exe --class-path .\out\production\snake\
+* import Model.*;
+ * die Art und Weise wie ich meine Bilder geladen habe
+ */
+
+/* TODO this Weekend
+*Verifier les MUST have
+* JAVADOC
+* Unit TEST
+ */

@@ -2,10 +2,6 @@ package View;
 
 import Controller.Icontroller;
 import processing.core.*;
-
-
-
-
 import java.util.List;
 
 public class View  extends PApplet implements Iview{
@@ -14,17 +10,14 @@ public class View  extends PApplet implements Iview{
     private final int block = 35;
 
 
-    private PImage menu;
-    private PImage playing;
-    private PImage gameOver2;
-    private PImage poison ;
-    private PImage wellDone;
+    private PImage menu,playing, gameOver2, poison,wellDone,looser2,goodFood,neutralFood,winner,looser1;
+
     private int message,frame;
     private final int duration=100;
-    private PImage looser2;
+
     private int r,g,b, yPosTop, yPosBottom;
 
-    private PImage goodFood;
+
     String topText = "Welcome to snakeGame";
     String bottomText = "press enter to start";
 
@@ -48,17 +41,23 @@ public class View  extends PApplet implements Iview{
         yPosBottom = height + 50;
         looser2=loadImage("looser2.jpg");
         looser2.resize(120,120);
+        looser1=loadImage("looser1.jpg");
+        looser1.resize(120,120);
         gameOver2=loadImage("gameOver2.jpg");
         gameOver2.resize(width,height);
         wellDone=loadImage("welldone.jpg");
         wellDone.resize(120, 120);
-        goodFood = loadImage("apfel.jpg");
+        goodFood = loadImage("c2.jpg");
         goodFood.resize(block,block);
         poison=loadImage("poison.jpg");
         poison.resize(block,block);
         menu=loadImage("menu.jpg");
         playing=loadImage("playing.jpg");
         playing.resize(width,height);
+        neutralFood=loadImage("neutral.jpg");
+        neutralFood.resize(block,block);
+        winner=loadImage("win.jpg");
+        winner.resize(width,height);
         menu.resize(width,height);
     }
 
@@ -100,7 +99,7 @@ public class View  extends PApplet implements Iview{
         frameRate(7);
         background(playing);
     }
-    public void drawSnake(List<Integer> x, List<Integer> y,int c){
+    public void drawSnake(List<Integer> x, List<Integer> y,int c, int q){
          for(int i=0; i<x.size(); i++){
              if(i==0) fill(255,22,100) ;
               else fill(0);
@@ -109,11 +108,16 @@ public class View  extends PApplet implements Iview{
          }
          textAlign(RIGHT);
          textSize(30);
+         text("Time: "+q,10,10, width -130, 50);
          text("Score: " +c,10,10, width -20, 50);
+
     }
     public void drawBadFood(int foodX, int foodY) {
         super.image(poison,foodX*block,foodY*block);
         //super.rect(foodX * block, foodY * block, block, block);
+    }
+    public void drawNeutralFood(int foodX, int foodY){
+        super.image(neutralFood,foodX*block,foodY*block);
     }
     public void drawMessage() {
             switch (message) {
@@ -128,6 +132,12 @@ public class View  extends PApplet implements Iview{
                     super.image(looser2,300,block);
                     fill(0);
                     super.text("LOOSER",600,70);
+                    break;
+                case 3:
+                    super.image(looser1,300,block);
+                    super.image(looser1,300,block);
+                    fill(0);
+                    super.text("I Got you",600,70);
                     break;
             }
         }
@@ -176,4 +186,5 @@ public class View  extends PApplet implements Iview{
     public void drawGameOver(){
         background(gameOver2);
     }
+    public void drawWinner(){ background(winner);}
 }

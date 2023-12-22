@@ -15,11 +15,7 @@ public class Snake {
      */
     private Direction direction;
 
-     public static void main(String args[]){
-         Snake s= new Snake(3,4,Direction.DOWN);
-         System.out.println(s.toString());
 
-     }
     /**
      * This constructor is used to create a snake object with the initial x and y coordinates and the initial direction
      * @param initialX
@@ -68,7 +64,10 @@ public class Snake {
         getyCoordinates().add(0, getyCoordinates().get(0) + (getDirection() == Direction.DOWN ? 1 :
                 (getDirection() == Direction.UP ? -1 : 0)));
     }
-
+    public void decreaseSize(){
+        getxCoordinates().remove(getxCoordinates().size() - 1);
+        getyCoordinates().remove(getyCoordinates().size() - 1);
+    }
     @Override
     public String toString() {
         String s="";
@@ -82,11 +81,11 @@ public class Snake {
                 else s="o"+s;
             }
             else if(this.getDirection()==Direction.UP){
-                if(i==0) s+="^";
+                if(i==0) s+="\n"+"^"+"\n";
                 else s+="o"+" "+"\n";
             }
             else if(this.getDirection()==Direction.DOWN){
-                if(i==0)s+="v";
+                if(i== xCoordinates.size())s+="\n"+"v"+"\n";
                 else s+="o"+"\n";
 
                // s+="\n"+"v";

@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3c72293-69d5-4352-918f-9004a2d4144c" name="Changes" comment="View and model started">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="e3c72293-69d5-4352-918f-9004a2d4144c" name="Changes" comment="New Background">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compilerbau/java/src/main/java/de/thm/mni/compilerbau/phases/_04a_tablebuild/TableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Compilerbau/java/src/main/java/de/thm/mni/compilerbau/phases/_04a_tablebuild/TableBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Imodel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Imodel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Snake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/SnakeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SnakeModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Iview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Iview.java" afterDir="false" />
@@ -55,18 +54,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/3/PIS/Snake&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;E:/3/PIS/Snake/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/3/Compilerbau/java",
+    "onboarding.tips.debug.path": "E:/3/PIS/Snake/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\3\PIS\Snake\lib" />
@@ -170,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702474113860</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="New Background">
+      <option name="closed" value="true" />
+      <created>1702630605576</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702630605576</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,7 +195,8 @@
     <MESSAGE value="initial" />
     <MESSAGE value="Model Compoleted" />
     <MESSAGE value="View and model started" />
-    <option name="LAST_COMMIT_MESSAGE" value="View and model started" />
+    <MESSAGE value="New Background" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Background" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

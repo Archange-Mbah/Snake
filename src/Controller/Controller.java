@@ -39,14 +39,21 @@ public class Controller implements Icontroller {
             view.drawMessage2();
             view.drawMessage3();
             view.setMessageToBePrinted(snakeGame.getMessageNumber());
-            view.drawSnake(snakeGame.getSnake().getxCoordinates(),snakeGame.getSnake().getyCoordinates(),snakeGame.getScore());
-            view.drawBadFood(snakeGame.getBadFood().getX(),snakeGame.getBadFood().getY());
-            view.drawGoodFood(snakeGame.getGoodFood().getX(),snakeGame.getGoodFood().getY());
-
+            view.drawSnake(snakeGame.getSnake().getxCoordinates(),snakeGame.getSnake().getyCoordinates(),snakeGame.getScore(),snakeGame.getTime());
+            drawFoods();
+        }
+        else if(snakeGame.getState()==GameState.WIN){
+          view.drawWinner();
         }
         else{
             view.drawGameOver();
         }
+    }
+
+    private void drawFoods(){
+        view.drawBadFood(snakeGame.getBadFood().getX(),snakeGame.getBadFood().getY());
+        view.drawGoodFood(snakeGame.getGoodFood().getX(),snakeGame.getGoodFood().getY());
+        view.drawNeutralFood(snakeGame.getNeutralFood().getX(),snakeGame.getNeutralFood().getY());
     }
 
     public void userInput(int input) {

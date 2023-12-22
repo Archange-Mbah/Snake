@@ -13,6 +13,6 @@ public interface Imodel {
     Direction getDirection();
 
     int getMessageNumber();
-
-
+    int getTime();
+    Food getNeutralFood();
 }

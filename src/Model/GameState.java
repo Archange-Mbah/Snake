@@ -6,5 +6,6 @@ package Model;
 public enum GameState {
     MENU,
     PLAYING,
-    GAMEOVER
+    GAMEOVER,
+    WIN
 }
