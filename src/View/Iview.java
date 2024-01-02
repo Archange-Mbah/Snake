@@ -18,6 +18,6 @@ public interface Iview {
 
     void  drawMessage();
     void drawGameOver();
-    void drawMessage2();
-    void drawMessage3();
+    void resetMenu();
+    
 }

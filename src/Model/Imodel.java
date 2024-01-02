@@ -15,4 +15,5 @@ public interface Imodel {
     int getMessageNumber();
     int getTime();
     Food getNeutralFood();
+    void reset();
 }

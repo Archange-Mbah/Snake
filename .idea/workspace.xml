@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e3c72293-69d5-4352-918f-9004a2d4144c" name="Changes" comment="New Background">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Imodel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Imodel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/SnakeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SnakeModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Iview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Iview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/SnakeModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/SnakeModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +52,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "E:/3/Compilerbau/java",
+    "last_opened_file_path": "E:/3/PIS/Fiergewinnt",
     "onboarding.tips.debug.path": "E:/3/PIS/Snake/src/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -71,7 +71,7 @@
       <recent name="E:\3\PIS\Snake\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.SnakeModelTest.test_getters_and_setters">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Snake" />
@@ -92,19 +92,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SnakeModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Model.SnakeModel" />
-      <module name="Snake" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SubsetSum" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SubsetSum" />
       <module name="Snake" />
@@ -112,11 +99,60 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SnakeModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Snake" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.SnakeModelTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SnakeModelTest.testFood" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Snake" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.SnakeModelTest" />
+      <option name="METHOD_NAME" value="testFood" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SnakeModelTest.test_getters_and_setters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Snake" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.SnakeModelTest" />
+      <option name="METHOD_NAME" value="test_getters_and_setters" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SnakeModelTest.test_getters_and_setters" />
+        <item itemvalue="JUnit.SnakeModelTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.SnakeModelTest.testFood" />
         <item itemvalue="Application.Snake" />
-        <item itemvalue="Application.SnakeModel" />
       </list>
     </recent_temporary>
   </component>
@@ -208,5 +244,17 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Snake$SnakeModelTest.ic" NAME="SnakeModelTest Coverage Results" MODIFIED="1703233628255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Snake$SnakeModelTest_test_getters_and_setters.ic" NAME="SnakeModelTest.test_getters_and_setters Coverage Results" MODIFIED="1703233766093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Snake$SnakeModelTest_testFood.ic" NAME="SnakeModelTest.testFood Coverage Results" MODIFIED="1703231550254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Snake$Main.ic" NAME="Main Coverage Results" MODIFIED="1703232762940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

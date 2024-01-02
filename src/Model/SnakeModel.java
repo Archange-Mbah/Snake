@@ -15,15 +15,29 @@ public class SnakeModel implements Imodel{
      /**
       * snake is an object of the Snake class
       */
-     private final Snake snake;
+     private Snake snake;
     /**
      * goodfood is an object of the Food class
+     * badFood is an object of the Food class
+     * neutralFood is an object of the Food class
      */
     private final Food goodfood,badFood,neutralFood;
 
+    /**
+     * state is an object of the GameState class
+     */
     private GameState state;
+    /**
+     * width and height are the width and height of the game
+     * MAXIMUMSCORE is the maximum score that the player has to reach to win the game
+     */
     private final int width=25,height=20,MAXIMUMSCORE=10;
 
+    /**
+     * messageNumber is used to store the number of the message that will be displayed in the game
+     * score is used to store the score of the player
+     * time is used to store the time left to the player
+     */
     private int messageNumber=0,score=0,time=700;
     Random rand= new Random();
 
@@ -40,10 +54,11 @@ public class SnakeModel implements Imodel{
         neutralFood= new Food(rand.nextInt(0,width),rand.nextInt(0,height));
         state=GameState.MENU;
     }
-    public static void main(String[] args){
+   /* public static void main(String[] args){
         SnakeModel s= new SnakeModel();
         System.out.println(s);
     }
+    */
 
     /**
      * This method is used to get the snake object
@@ -66,6 +81,10 @@ public class SnakeModel implements Imodel{
     public Food getBadFood(){
         return badFood;
     }
+    /**
+     * This method is used to get the neutral food object
+     * @return neutralFood
+     */
     public Food getNeutralFood(){return neutralFood;}
     /**
      * This method is used to get the state of the game
@@ -89,6 +108,10 @@ public class SnakeModel implements Imodel{
         snake.setDirection(direction);
         System.out.println(snake);
     }
+    /**
+     * This method is used to get the time left to the player
+     * @return time
+     */
     public int getTime(){
         return time;
     }
@@ -102,21 +125,29 @@ public class SnakeModel implements Imodel{
     public Direction  getDirection(){
         return snake.getDirection();
     }
-    public void generateFood(Food f){
-        f.setX(rand.nextInt(0,width));
-        f.setY(rand.nextInt(0,width));
+    /**
+     * This method is used to generate a food
+     * @param food
+     */
+    private  void generateFood(Food food){
+        food.setX(rand.nextInt(0,width));
+        food.setY(rand.nextInt(0,width));
     }
 
     /**
      * This method is used to check if the game is over
      * @return true if the game is over, false otherwise
      */
-    public boolean isGameOver() {
+    private boolean isGameOver() {
         if(time==0 && score<MAXIMUMSCORE)return true;
         return IntStream.range(1, snake.getxCoordinates().size())
                 .anyMatch(i -> snake.getxCoordinates().get(0) == snake.getxCoordinates().get(i)
                         && snake.getyCoordinates().get(0) == snake.getyCoordinates().get(i));
     }
+
+    /**
+     * This method is used to move the snake by verifying the direction of the snake
+     */
      private void move(){
              for(int i = snake.getxCoordinates().size()-1;i>0;i--) {
                  snake.getxCoordinates().set(i,snake.getxCoordinates().get(i-1)) ;
@@ -127,8 +158,12 @@ public class SnakeModel implements Imodel{
              snake.getyCoordinates().set(0,snake.getyCoordinates().get(0) +(snake.getDirection()==Direction.DOWN ? 1:
                  (snake.getDirection()==Direction.UP ? -1:0))); //
      }
+
      /**
-      * This method is used to play the game
+      * It controls the logic of the game. 
+      *it verifies if the snake collides with the food, if the snake collides with the food it increases the size of the snake and generates a new food.
+      *it verifies if the snake collides with the wall, if the snake collides with the wall it continues on the opposite wall
+      *it increases the score of the player if the snake collides with the food and if the snake collides with the bad food it decreases the size of the snake 
       */
    public void play(){
        time--;
@@ -147,10 +182,6 @@ public class SnakeModel implements Imodel{
             messageNumber=1;
             generateFood(goodfood);
             snake.increaseSize();
-            /*snake.getxCoordinates().add(0, snake.getxCoordinates().get(0) + (snake.getDirection() == Direction.RIGHT ? 1 :
-                    (snake.getDirection() == Direction.LEFT ? -1 : 0)));
-            snake.getyCoordinates().add(0, snake.getyCoordinates().get(0) + (snake.getDirection() == Direction.DOWN ? 1 :
-                    (snake.getDirection() == Direction.UP ? -1 : 0)));*/
             System.out.println("collission With Good Food With good food");
             generateFood(goodfood);
         }
@@ -168,8 +199,6 @@ public class SnakeModel implements Imodel{
             generateFood(badFood);
             if (this.state != GameState.GAMEOVER && snake.getxCoordinates().size() > 2) {
                 snake.decreaseSize();
-                /*snake.getxCoordinates().remove(snake.getxCoordinates().size() - 1);
-                snake.getyCoordinates().remove(snake.getyCoordinates().size() - 1);*/
             } else setState(GameState.GAMEOVER);
         }
 
@@ -185,17 +214,17 @@ public class SnakeModel implements Imodel{
 
  * @return true if the snake collides with the food, false otherwise
  */
-public boolean collissionWithFood(Food f){
+private boolean collissionWithFood(Food f){
     return snake.getxCoordinates().get(0) == f.getX() && snake.getyCoordinates().get(0) == f.getY();
 }
-
+ /**
+  * This method is used to get the message number
+  * @return messageNumber
+  */
  public int getMessageNumber(){
      return  messageNumber;
  }
 
-
-
- 
     /**
      * This method is used to get the score
      * @return score
@@ -218,6 +247,22 @@ public boolean collissionWithFood(Food f){
     }
     else if(snake.getyCoordinates().get(0)>height-1)
         snake.getyCoordinates().set(0,0);
+}
+/**
+ * This method is used to reset the game by setting the snake to its initial position,
+ *  setting the direction of the snake to right,
+ *  setting the score to 0, setting the time to 700, 
+ * setting the message number to 0, setting the state to MENU and generating a new food
+ */
+public void reset(){
+    snake= new Snake(0,0,Direction.RIGHT);
+    score=0;
+    time=700;
+    messageNumber=0;
+    state=GameState.MENU;
+    generateFood(goodfood);
+    generateFood(badFood);
+    generateFood(neutralFood);
 }
  /**
      * This method is used to print the food in the console

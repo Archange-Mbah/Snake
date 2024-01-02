@@ -3,9 +3,17 @@ package View;
 import Controller.Icontroller;
 import processing.core.*;
 import java.util.List;
-
+/** The View contains codes on how to display My GameSnake
+ *  It extends PApplet and implements the IView interface.
+ */
 public class View  extends PApplet implements Iview{
+    /**
+     * The controller for the game.
+     */
     private Icontroller controller;
+    /**
+     * The number of blocks for the snake and food.
+     */
 
     private final int block = 35;
 
@@ -21,18 +29,34 @@ public class View  extends PApplet implements Iview{
     String topText = "Welcome to snakeGame";
     String bottomText = "press enter to start";
 
+    /**
+     * The main method that runs the PApplet.Main method to start the game.
+     * @param args command line arguments
+     */
+
     public void setController(Icontroller c){
         this.controller =c;
     }
 
-    public static void main(String[] args){
+   /*  public static void main(String[] args){
         PApplet.main(View.class);
     }
+    */
 
+    /**
+     * The setup method is used to set the size of the game window.
+     */
     public View(int a, int b){
         setSize(a,b);
     }
 
+    /**
+     * The setup method is used to set the size of the game window.
+     * It is called once when the program starts.
+     * It is used to define initial environment properties such as screen size
+     *  and background color and to load media such as images and
+     *  fonts as the program starts.
+     */
     public void setup(){
         frameRate(7);
         textAlign(CENTER, CENTER);
@@ -59,14 +83,24 @@ public class View  extends PApplet implements Iview{
         winner=loadImage("win.jpg");
         winner.resize(width,height);
         menu.resize(width,height);
-    }
+    } 
 
+    /**
+     * The draw method is called directly after setup() and is used to
+     * continuously execute the lines of code contained inside its block
+     * until the program is stopped or noLoop() is called.
+     * Each statement is executed in sequence and after the last line is read,
+     * the first line is executed again.
+     * @param
+     */
+ 
     public void draw(){
         if(controller !=null) controller.nextFrame();
     }
     public void keyPressed() {
         if (keyCode==ENTER) controller.userInput(0);
-            if (keyCode == UP) {
+
+        if (keyCode == UP) {
             controller.userInput(3); // For UP arrow key
         } else if (keyCode == DOWN) {
             controller.userInput(4); // For DOWN arrow key
@@ -77,7 +111,10 @@ public class View  extends PApplet implements Iview{
         }
     }
 
-
+    /**
+     * The method that draws the title screen of the game.
+     * It displays the title and instructions on how to start the game.
+     */
     public void drawMenu(){
         frameRate(30);
         if(yPosTop < height / 2 - 20) background(0);
@@ -94,11 +131,26 @@ public class View  extends PApplet implements Iview{
         text(topText, width / 2, yPosTop);
         text(bottomText, width / 2, yPosBottom);
     }
-
+    /**
+     * The method that resets the title screen of the game.
+     * It resets the title and instructions on how to start the game.
+     */
+     public void resetMenu(){
+         yPosTop = -50; // Start above the canvas
+         yPosBottom = height + 50;
+     }
+    /**
+     * The method that draws the snake on the screen.
+     */
     public void drawGame(){
         frameRate(7);
         background(playing);
     }
+    /**
+     * The method that draws the snake on the screen.
+     * @param x the x coordinates of the snake
+     * @param y the y coordinates of the snake
+     */
     public void drawSnake(List<Integer> x, List<Integer> y,int c, int q){
          for(int i=0; i<x.size(); i++){
              if(i==0) fill(255,22,100) ;
@@ -112,13 +164,28 @@ public class View  extends PApplet implements Iview{
          text("Score: " +c,10,10, width -20, 50);
 
     }
+    /**
+     * The method that draws the food on the screen.
+     * @param foodX the x coordinate of the food
+     * @param foodY the y coordinate of the food
+     */
     public void drawBadFood(int foodX, int foodY) {
         super.image(poison,foodX*block,foodY*block);
         //super.rect(foodX * block, foodY * block, block, block);
     }
+    /**
+     * The method that draws the food on the screen.
+     * @param foodX the x coordinate of the food
+     * @param foodY the y coordinate of the food
+     */
     public void drawNeutralFood(int foodX, int foodY){
         super.image(neutralFood,foodX*block,foodY*block);
     }
+    /**
+     * The method that draws the food on the screen.
+     * @param foodX the x coordinate of the food
+     * @param foodY the y coordinate of the food
+     */
     public void drawMessage() {
             switch (message) {
                 case 1:
@@ -141,39 +208,6 @@ public class View  extends PApplet implements Iview{
                     break;
             }
         }
-    public void drawMessage2() {
-        switch (message) {
-            case 1:
-                super.image(wellDone, 300, block);
-                super.image(wellDone, 300, block);
-                fill(0);
-                super.text("NICE TRY", 600, 70);
-                break;
-            case 2:
-                super.image(looser2,300,block);
-                super.image(looser2,300,block);
-                fill(0);
-                super.text("LOOSER",600,70);
-                break;
-        }
-    }
-    public void drawMessage3() {
-        switch (message) {
-            case 1:
-                super.image(wellDone, 300, block);
-                super.image(wellDone, 300, block);
-                fill(0);
-                super.text("NICE TRY", 600, 70);
-                break;
-            case 2:
-                super.image(looser2,300,block);
-                super.image(looser2,300,block);
-                fill(0);
-                super.text("LOOSER",600,70);
-                break;
-        }
-    }
-
 
 
     public void setMessageToBePrinted(int a){

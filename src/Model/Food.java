@@ -50,13 +50,8 @@ public class Food {
     public int getY(){
         return y;
     }
-     /**
-      * Getter for isGood
-      * @return isGood
-      */
-    /*public boolean getIsGood(){
-        return isGood;
-    }*/
+
+
      /**
       * toString method
       * @return the food is at position (x y)

@@ -58,6 +58,9 @@ public class Snake {
         return direction;
     }
 
+    /**
+     * This method is used to increase the size of the snake
+     */
     public void increaseSize(){
         getxCoordinates().add(0, getxCoordinates().get(0) + (getDirection() == Direction.RIGHT ? 1 :
                 (getDirection() == Direction.LEFT ? -1 : 0)));
