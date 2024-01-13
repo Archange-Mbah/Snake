@@ -18,7 +18,7 @@ public class View  extends PApplet implements Iview{
     private final int block = 35;
 
 
-    private PImage menu,playing, gameOver2, poison,wellDone,looser2,goodFood,neutralFood,winner,looser1;
+    private PImage menu,playing, gameOver, poison,wellDone,looser2,goodFood,neutralFood,winner,looser1;
 
     private int message,frame;
     private final int duration=100;
@@ -67,8 +67,8 @@ public class View  extends PApplet implements Iview{
         looser2.resize(120,120);
         looser1=loadImage("images/looser1.jpg");
         looser1.resize(120,120);
-        gameOver2=loadImage("images/gameOver.jpg");
-        gameOver2.resize(width,height);
+        gameOver=loadImage("images/gameOver.jpg");
+        gameOver.resize(width,height);
         wellDone=loadImage("images/welldone.jpg");
         wellDone.resize(120, 120);
         goodFood = loadImage("images/good.jpg");
@@ -76,7 +76,7 @@ public class View  extends PApplet implements Iview{
         poison=loadImage("images/poison.jpg");
         poison.resize(block,block);
         menu=loadImage("images/menu.jpg");
-        playing=loadImage("images/playing.jpg");
+        playing=loadImage("images/background.jpg");
         playing.resize(width,height);
         neutralFood=loadImage("images/neutral.jpg");
         neutralFood.resize(block,block);
@@ -183,8 +183,7 @@ public class View  extends PApplet implements Iview{
     }
     /**
      * The method that draws the food on the screen.
-     * @param foodX the x coordinate of the food
-     * @param foodY the y coordinate of the food
+     * @param
      */
     public void drawMessage() {
             switch (message) {
@@ -218,7 +217,7 @@ public class View  extends PApplet implements Iview{
         super.image(goodFood,foodX*block,foodY*block);
     }
     public void drawGameOver(){
-        background(gameOver2);
+        background(gameOver);
     }
     public void drawWinner(){ background(winner);}
 }

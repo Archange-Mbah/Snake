@@ -16,7 +16,7 @@ public class SnakeThread  extends Thread{
     public void run(){
         while(true){
             try{
-                Thread.sleep(1000);
+                Thread.sleep(7000);
                 model.getGoodFood().setX(random.nextInt(3,25));
                 model.getGoodFood().setY(random.nextInt(3,20));
                 model.getBadFood().setX(random.nextInt(5,25));
