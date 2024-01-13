@@ -59,6 +59,13 @@ public class SnakeModel implements Imodel{
         System.out.println(s);
     }
     */
+    public static void main(String args[]){
+        SnakeModel m= new SnakeModel();
+        m.move();
+        System.out.println(m.snake.getxCoordinates().get(0));
+        m.move();
+        System.out.println(m.snake.getxCoordinates().get(0));
+    }
 
     /**
      * This method is used to get the snake object
