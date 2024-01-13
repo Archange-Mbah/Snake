@@ -1,3 +1,4 @@
+package SnakeGame;
 
 import processing.core.PApplet;
 import SnakeGame.Model.*;
