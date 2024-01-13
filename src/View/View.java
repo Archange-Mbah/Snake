@@ -31,7 +31,7 @@ public class View  extends PApplet implements Iview{
 
     /**
      * The main method that runs the PApplet.Main method to start the game.
-     * @param args command line arguments
+     * @param
      */
 
     public void setController(Icontroller c){

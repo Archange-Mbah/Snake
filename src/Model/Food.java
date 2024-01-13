@@ -5,12 +5,7 @@ package Model;
  */
 public class Food {
     private int x,y;
-    //private final boolean isGood; // true if the food is good, false if the food is bad
 
-   /* public static void main(String args[]){
-        Food f= new Food(2,3,true);
-        System.out.println(f);
-    }*/
 
     /**
      * This constructor is used to create a food object with the initial x and y coordinates and whether the food is good or bad

@@ -1,12 +1,11 @@
 package Test;
-import Model.SnakeModel;
-import Model.GameState;
+
 import Model.Direction;
+import Model.GameState;
+import Model.SnakeModel;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,11 +41,7 @@ public class SnakeModelTest {
         assertEquals(model.getDirection(),Direction.RIGHT);
     }
 
-    @Test
-    void gameOver(){
-     model.
 
-    }
 
 
 }
