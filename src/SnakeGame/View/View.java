@@ -66,24 +66,24 @@ public class View  extends PApplet implements Iview {
         textSize(24);
         yPosTop = -50; // Start above the canvas
         yPosBottom = height + 50;
-        looser2=loadImage("images/looser2.jpg");
+        looser2=loadImage("SnakeGame/images/looser2.jpg");
         looser2.resize(120,120);
-        looser1=loadImage("images/looser1.jpg");
+        looser1=loadImage("SnakeGame/images/looser1.jpg");
         looser1.resize(120,120);
-        gameOver=loadImage("images/gameOver.jpg");
+        gameOver=loadImage("SnakeGame/images/gameOver.jpg");
         gameOver.resize(width,height);
-        wellDone=loadImage("images/welldone.jpg");
+        wellDone=loadImage("SnakeGame/images/welldone.jpg");
         wellDone.resize(120, 120);
-        goodFood = loadImage("images/good.jpg");
+        goodFood = loadImage("SnakeGame/images/good.jpg");
         goodFood.resize(block,block);
-        poison=loadImage("images/poison.jpg");
+        poison=loadImage("SnakeGame/images/poison.jpg");
         poison.resize(block,block);
-        menu=loadImage("images/menu.jpg");
-        playing=loadImage("images/background.jpg");
+        menu=loadImage("SnakeGame/images/menu.jpg");
+        playing=loadImage("SnakeGame/images/background.jpg");
         playing.resize(width,height);
-        neutralFood=loadImage("images/neutral.jpg");
+        neutralFood=loadImage("SnakeGame/images/neutral.jpg");
         neutralFood.resize(block,block);
-        winner=loadImage("images/win.jpg");
+        winner=loadImage("SnakeGame/images/win.jpg");
         winner.resize(width,height);
         menu.resize(width,height);
     } 
