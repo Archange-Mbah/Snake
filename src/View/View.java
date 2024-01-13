@@ -63,24 +63,24 @@ public class View  extends PApplet implements Iview{
         textSize(24);
         yPosTop = -50; // Start above the canvas
         yPosBottom = height + 50;
-        looser2=loadImage("looser2.jpg");
+        looser2=loadImage("images/looser2.jpg");
         looser2.resize(120,120);
-        looser1=loadImage("looser1.jpg");
+        looser1=loadImage("images/looser1.jpg");
         looser1.resize(120,120);
-        gameOver2=loadImage("gameOver2.jpg");
+        gameOver2=loadImage("images/gameOver.jpg");
         gameOver2.resize(width,height);
-        wellDone=loadImage("welldone.jpg");
+        wellDone=loadImage("images/welldone.jpg");
         wellDone.resize(120, 120);
-        goodFood = loadImage("c2.jpg");
+        goodFood = loadImage("images/good.jpg");
         goodFood.resize(block,block);
-        poison=loadImage("poison.jpg");
+        poison=loadImage("images/poison.jpg");
         poison.resize(block,block);
-        menu=loadImage("menu.jpg");
-        playing=loadImage("playing.jpg");
+        menu=loadImage("images/menu.jpg");
+        playing=loadImage("images/playing.jpg");
         playing.resize(width,height);
-        neutralFood=loadImage("neutral.jpg");
+        neutralFood=loadImage("images/neutral.jpg");
         neutralFood.resize(block,block);
-        winner=loadImage("win.jpg");
+        winner=loadImage("images/win.jpg");
         winner.resize(width,height);
         menu.resize(width,height);
     } 
