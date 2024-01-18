@@ -50,7 +50,7 @@ public class SnakeModel implements Imodel{
         snakeThread.start(); //start the thread
         snake=new Snake(0,0,Direction.RIGHT);
         goodfood= new Food(rand.nextInt(0,width),rand.nextInt(0,width));
-        badFood= new Food(rand.nextInt(0,width),rand.nextInt(0,height));
+        badFood= new Food(rand.nextInt(10,width),rand.nextInt(10,height));
         neutralFood= new Food(rand.nextInt(0,width),rand.nextInt(0,height));
         state=GameState.MENU;
     }
@@ -134,7 +134,7 @@ public class SnakeModel implements Imodel{
     }
     /**
      * This method is used to generate a food
-     * @param food
+     * @param food to generate a new position
      */
     private  void generateFood(Food food){
         food.setX(rand.nextInt(0,width));
@@ -142,7 +142,7 @@ public class SnakeModel implements Imodel{
     }
 
     /**
-     * This method is used to check if the game is over
+     * This method is used to check if the game is over it uses streams and lambda functions
      * @return true if the game is over, false otherwise
      */
     private boolean isGameOver() {
