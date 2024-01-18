@@ -3,6 +3,7 @@ package SnakeGame.Model;
 /**
  * Food class is used to create a food object that will be used in the game, with the food's coordinates and whether the food is good or bad.
  */
+
 public class Food {
     private int x,y;
 
