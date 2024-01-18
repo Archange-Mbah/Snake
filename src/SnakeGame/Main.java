@@ -7,8 +7,8 @@ import SnakeGame.View.*;
 public  final class Main {
     public static void main(String[] args) {
 
-        final int SIZE1 = 875;
-        final int SIZE2=700;
+        final int SIZE1 = 750;
+        final int SIZE2=600;
         var view = new View(SIZE1,SIZE2);
         var model = new SnakeModel();
         var controller = new Controller();

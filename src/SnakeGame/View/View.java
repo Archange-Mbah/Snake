@@ -16,7 +16,7 @@ public class View  extends PApplet implements Iview {
      * The number of blocks for the snake and food.
      */
 
-    private final int block = 35;
+    private final int block = 30;
 
 
     private PImage menu,playing, gameOver, poison,wellDone,looser2,goodFood,neutralFood,winner,looser1;
@@ -129,7 +129,7 @@ public class View  extends PApplet implements Iview {
 
 
         // Display text at updated positions
-        fill(255);
+        fill(51,255,255);
         text(topText, width / 2, yPosTop);
         text(bottomText, width / 2, yPosBottom);
     }
@@ -191,7 +191,7 @@ public class View  extends PApplet implements Iview {
                 case 1:
                     super.image(wellDone, 300, block);
                     super.image(wellDone, 300, block);
-                    fill(0);
+                    fill(255,0,0);
                     super.text("NICE TRY", 600, 70);
                     break;
                 case 2:
