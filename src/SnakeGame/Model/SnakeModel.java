@@ -54,18 +54,6 @@ public class SnakeModel implements Imodel{
         neutralFood= new Food(rand.nextInt(0,width),rand.nextInt(0,height));
         state=GameState.MENU;
     }
-   /* public static void main(String[] args){
-        SnakeModel s= new SnakeModel();
-        System.out.println(s);
-    }
-    */
-    public static void main(String args[]){
-        SnakeModel m= new SnakeModel();
-        m.move();
-        System.out.println(m.snake.getxCoordinates().get(0));
-        m.move();
-        System.out.println(m.snake.getxCoordinates().get(0));
-    }
 
     /**
      * This method is used to get the snake object
@@ -139,6 +127,7 @@ public class SnakeModel implements Imodel{
     private  void generateFood(Food food){
         food.setX(rand.nextInt(0,width));
         food.setY(rand.nextInt(0,width));
+        changeCoordinatesOnCollission();
     }
 
     /**
@@ -206,7 +195,7 @@ public class SnakeModel implements Imodel{
             generateFood(badFood);
             if (this.state != GameState.GAMEOVER && snake.getxCoordinates().size() > 2) {
                 snake.decreaseSize();
-            } else setState(GameState.GAMEOVER);
+            }// else setState(GameState.GAMEOVER);
         }
 
       }
@@ -271,6 +260,18 @@ public void reset(){
     generateFood(badFood);
     generateFood(neutralFood);
 }
+private void changeCoordinatesOnCollission() {
+    if (goodfood.getX() == badFood.getX() && goodfood.getY() == badFood.getY())
+        generateFood(goodfood);
+
+    if (goodfood.getX() == neutralFood.getX() && goodfood.getY() == neutralFood.getY())
+        generateFood(neutralFood);
+
+    if (badFood.getX() == neutralFood.getX() && badFood.getY() == neutralFood.getY())
+        generateFood(badFood);
+
+}
+
  /**
      * This method is used to print the food in the console
      */
@@ -278,8 +279,9 @@ public void reset(){
   public String  toString(){
     String s="";
     s+="Snake: "+snake.toString()+ "  pos: "+ "("+snake.getxCoordinates().getFirst() +","+snake.getyCoordinates().getFirst()+")"+"\n";
-    s+=" The good Food: "+getBadFood().toString()+"\n";
-    s+=" The bad Food: "+getGoodFood().toString()+"\n";
+    s+=" The Good Food: "+getGoodFood().toString()+"\n";
+    s+=" The bad Food: "+getBadFood().toString()+"\n";
+    s+=" The neutral Food: "+getNeutralFood().toString()+"\n";
     s+="Score: "+getScore()+"\n";
     s+="State: "+getState()+"\n";
     return s;

@@ -8,7 +8,7 @@ import java.util.Random;
 
 
 public class SnakeThread  extends Thread{
-    SnakeModel model;
+    private SnakeModel model;
     Random random= new Random();
     /**
      * This constructor is used to create a SnakeThread object

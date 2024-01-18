@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3c72293-69d5-4352-918f-9004a2d4144c" name="Changes" comment="New Background">
-      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/SnakeModelTest.java" afterDir="false" />
+    <list default="true" id="e3c72293-69d5-4352-918f-9004a2d4144c" name="Changes" comment="Test">
+      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/DirectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/FoodTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/GameStateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/SnakeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/SnakeThreadTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeGame/Model/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeGame/Model/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeGame/Test/FoodTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeGame/Test/SnakeModelTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeGame/Test/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/SnakeGame/Model/SnakeModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/SnakeModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SnakeGame/Model/SnakeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeGame/Model/SnakeModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SnakeGame/Model/SnakeThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeGame/Model/SnakeThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,25 +60,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/User/Desktop/PIS/Snake",
-    "onboarding.tips.debug.path": "E:/3/PIS/Snake/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/PIS/Snake&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/3/PIS/Snake/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\3\PIS\Snake\lib" />
@@ -88,7 +90,20 @@
       <recent name="SnakeGame.Model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SnakeModelTest">
+  <component name="RunManager" selected="JUnit.All in Snake">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SnakeGame.Main" />
+      <module name="Snake" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SnakeGame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SubsetSum" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SubsetSum" />
       <module name="Snake" />
@@ -104,6 +119,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SnakeGame.Model in Snake" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Snake" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SnakeGame.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="SnakeGame.Model" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SnakeModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <extension name="coverage">
@@ -114,13 +143,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="SnakeGame.Model" />
       <option name="MAIN_CLASS_NAME" value="SnakeGame.Model.SnakeModelTest" />
-      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SnakeModelTest.getSnake" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SnakeThreadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <extension name="coverage">
         <pattern>
@@ -129,24 +157,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="SnakeGame.Model" />
-      <option name="MAIN_CLASS_NAME" value="SnakeGame.Model.SnakeModelTest" />
-      <option name="METHOD_NAME" value="getSnake" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="SnakeGame.Model.SnakeThreadTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.SubsetSum" />
-      <item itemvalue="JUnit.All in Snake" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.SnakeGame.Model in Snake" />
       <item itemvalue="JUnit.SnakeModelTest" />
-      <item itemvalue="JUnit.SnakeModelTest.getSnake" />
+      <item itemvalue="JUnit.All in Snake" />
+      <item itemvalue="JUnit.SnakeThreadTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SnakeModelTest" />
-        <item itemvalue="JUnit.SnakeModelTest.getSnake" />
         <item itemvalue="JUnit.All in Snake" />
+        <item itemvalue="JUnit.SnakeGame.Model in Snake" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.SnakeModelTest" />
+        <item itemvalue="JUnit.SnakeThreadTest" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702630605576</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Test">
+      <option name="closed" value="true" />
+      <created>1705572114755</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1705572114755</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,7 +265,8 @@
     <MESSAGE value="Model Compoleted" />
     <MESSAGE value="View and model started" />
     <MESSAGE value="New Background" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Background" />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -236,24 +276,6 @@
           <line>15</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/SnakeGame/Model/SnakeModel.java</url>
-          <line>61</line>
-          <properties class="SnakeGame.Model.SnakeModel" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/Test/SnakeGame/Model/SnakeModelTest.java</url>
-          <line>19</line>
-          <properties class="SnakeGame.Model.SnakeModelTest" method="getSnake">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -261,20 +283,29 @@
     <SUITE FILE_PATH="coverage/Snake$SnakeModelTest_test_getters_and_setters.ic" NAME="SnakeModelTest.test_getters_and_setters Coverage Results" MODIFIED="1703233766093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Snake$SnakeModelTest.ic" NAME="SnakeModelTest Coverage Results" MODIFIED="1705571627972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Snake$SnakeModelTest.ic" NAME="SnakeModelTest Coverage Results" MODIFIED="1705579501757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>SnakeGame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Snake$SnakeGame_Model_in_Snake.ic" NAME="SnakeGame.Model in Snake Coverage Results" MODIFIED="1705570540365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Snake$SnakeGame_Model_in_Snake.ic" NAME="SnakeGame.Model in Snake Coverage Results" MODIFIED="1705583506965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>SnakeGame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Snake$All_in_Snake.ic" NAME="All in Snake Coverage Results" MODIFIED="1705571146599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Snake$All_in_Snake.ic" NAME="All in Snake Coverage Results" MODIFIED="1705584165246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Snake$SnakeModelTest_testFood.ic" NAME="SnakeModelTest.testFood Coverage Results" MODIFIED="1703231550254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Snake$SnakeModelTest_getSnake.ic" NAME="SnakeModelTest.getSnake Coverage Results" MODIFIED="1705571683247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>SnakeGame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Snake$SnakeThreadTest.ic" NAME="SnakeThreadTest Coverage Results" MODIFIED="1705569827946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Snake$FoodTest.ic" NAME="FoodTest Coverage Results" MODIFIED="1705575153676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SnakeGame.Model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Snake$SnakeTest.ic" NAME="SnakeTest Coverage Results" MODIFIED="1705575166441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SnakeGame.Model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Snake$SnakeThreadTest.ic" NAME="SnakeThreadTest Coverage Results" MODIFIED="1705575248299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SnakeGame.Model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Snake$DirectionTest.ic" NAME="DirectionTest Coverage Results" MODIFIED="1705575141594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>SnakeGame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Snake$Main.ic" NAME="Main Coverage Results" MODIFIED="1703232762940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
