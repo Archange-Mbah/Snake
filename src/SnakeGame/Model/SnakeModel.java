@@ -290,7 +290,7 @@ private void changeCoordinatesOnCollission() {
   }
 }
 /* Zeit der Stickers
-* Jshell.exe --class-path .\out\production\snake\
+* Jshell.exe --class-path .\out\production\snake\SnakeGame\
 * import Model.*;
  * die Art und Weise wie ich meine Bilder geladen habe
  */
