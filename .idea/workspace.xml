@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3c72293-69d5-4352-918f-9004a2d4144c" name="Changes" comment="Test">
-      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/DirectionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/FoodTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/GameStateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/SnakeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/SnakeThreadTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/SnakeGame/Model/SnakeModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/SnakeGame/Model/SnakeModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SnakeGame/Model/SnakeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeGame/Model/SnakeModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SnakeGame/Model/SnakeThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeGame/Model/SnakeThread.java" afterDir="false" />
     </list>
@@ -50,6 +44,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -60,25 +57,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/PIS/Snake&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;E:/3/PIS/Snake/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/User/Desktop/PIS/README.md",
+    "onboarding.tips.debug.path": "E:/3/PIS/Snake/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\3\PIS\Snake\lib" />
@@ -90,7 +87,7 @@
       <recent name="SnakeGame.Model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Snake">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SnakeGame.Main" />
       <module name="Snake" />
@@ -173,9 +170,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in Snake" />
         <item itemvalue="JUnit.SnakeGame.Model in Snake" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SnakeModelTest" />
         <item itemvalue="JUnit.SnakeThreadTest" />
       </list>
@@ -246,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705572114755</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Test">
+      <option name="closed" value="true" />
+      <created>1705586663387</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1705586663388</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,7 +294,7 @@
     <SUITE FILE_PATH="coverage/Snake$SnakeGame_Model_in_Snake.ic" NAME="SnakeGame.Model in Snake Coverage Results" MODIFIED="1705583506965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>SnakeGame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Snake$All_in_Snake.ic" NAME="All in Snake Coverage Results" MODIFIED="1705584165246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Snake$All_in_Snake.ic" NAME="All in Snake Coverage Results" MODIFIED="1705661108857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Snake$SnakeModelTest_testFood.ic" NAME="SnakeModelTest.testFood Coverage Results" MODIFIED="1703231550254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
@@ -308,6 +313,8 @@
     <SUITE FILE_PATH="coverage/Snake$DirectionTest.ic" NAME="DirectionTest Coverage Results" MODIFIED="1705575141594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>SnakeGame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Snake$Main.ic" NAME="Main Coverage Results" MODIFIED="1703232762940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Snake$Main.ic" NAME="Main Coverage Results" MODIFIED="1705651360915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>SnakeGame.*</FILTER>
+    </SUITE>
   </component>
 </project>

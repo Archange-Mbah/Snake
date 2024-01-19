@@ -131,11 +131,12 @@ public class SnakeModel implements Imodel{
     }
 
     /**
-     * This method is used to check if the game is over it uses streams and lambda functions
+     * This method is used to check if the game is over it uses streams and lambda functions.
+     * it verifies if the game is over by checking the time and the score
      * @return true if the game is over, false otherwise
      */
     private boolean isGameOver() {
-        if(time==0 && score<MAXIMUMSCORE)return true;
+        if(time<=0 && score<MAXIMUMSCORE)return true;
         return IntStream.range(1, snake.getxCoordinates().size())
                 .anyMatch(i -> snake.getxCoordinates().get(0) == snake.getxCoordinates().get(i)
                         && snake.getyCoordinates().get(0) == snake.getyCoordinates().get(i));
@@ -164,11 +165,12 @@ public class SnakeModel implements Imodel{
    public void play(){
        time--;
        messageNumber=0;
+       //if(score==MAXIMUMSCORE && time>0) setState(GameState.WIN);
        if(isGameOver()){
            setState(GameState.GAMEOVER);
            System.out.println("GameOver you loose");
        }
-       else if (score>MAXIMUMSCORE) setState(GameState.WIN); ;
+       else if (score>=MAXIMUMSCORE && time>=0) setState(GameState.WIN); ;
 
        continueOnOppositeWall();
       if(getState()==GameState.PLAYING) {
@@ -195,7 +197,7 @@ public class SnakeModel implements Imodel{
             generateFood(badFood);
             if (this.state != GameState.GAMEOVER && snake.getxCoordinates().size() > 2) {
                 snake.decreaseSize();
-            }// else setState(GameState.GAMEOVER);
+            } else setState(GameState.GAMEOVER);
         }
 
       }
