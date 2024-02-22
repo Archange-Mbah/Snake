@@ -18,9 +18,9 @@ public class Snake {
 
     /**
      * This constructor is used to create a snake object with the initial x and y coordinates and the initial direction
-     * @param initialX
-     * @param initialY
-     * @param initialDirection
+     * @param initialX the initial x coordinate of the snake
+     * @param initialY the initial y coordinate of the snake
+     * @param initialDirection the initial direction of the snake
      */
     public Snake(int initialX, int initialY, Direction initialDirection) {
         xCoordinates.add(initialX);

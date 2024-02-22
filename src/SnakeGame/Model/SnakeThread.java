@@ -28,11 +28,11 @@ public class SnakeThread  extends Thread{
         while(true){
             try{
                 Thread.sleep(6000);
-                model.getGoodFood().setX(random.nextInt(3,25));
+                model.getGoodFood().setX(random.nextInt(3,23));
                 model.getGoodFood().setY(random.nextInt(3,20));
-                model.getBadFood().setX(random.nextInt(5,25));
-                model.getBadFood().setY(random.nextInt(4,20));
-                model.getNeutralFood().setX(random.nextInt(6,25));
+                model.getBadFood().setX(random.nextInt(5,24));
+                model.getBadFood().setY(random.nextInt(5,20));
+                model.getNeutralFood().setX(random.nextInt(6,24));
                 model.getNeutralFood().setY(random.nextInt(5,20));
             }catch (InterruptedException e){
                 e.printStackTrace();

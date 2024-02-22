@@ -1,6 +1,10 @@
 package SnakeGame.View;
 
 import java.util.List;
+/**
+ * This interface contains all necessary classes of a view to be usable by the controller.
+ * Please note that your view class can contain additional methods, which will not accessible by the controller.
+ */
 
 public interface Iview {
     void drawMenu();

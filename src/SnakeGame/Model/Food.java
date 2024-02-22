@@ -5,13 +5,16 @@ package SnakeGame.Model;
  */
 
 public class Food {
+    /**
+     * x and y are the coordinates of the food
+     */
     private int x,y;
 
 
     /**
      * This constructor is used to create a food object with the initial x and y coordinates and whether the food is good or bad
-     * @param x
-     * @param y
+     * @param x is the x coordinate of the food
+     * @param y is the y coordinate of the food
 
      */
     public Food(int x, int y){
@@ -20,21 +23,21 @@ public class Food {
     }
      /**
       * Setter for x
-      * @param x
+      * @param x to set the x coordinate of the food
       */
     public void setX(int x){
         this.x=x;
     }
      /**
       * Setter for y
-      * @param y
+      * @param y to set the y coordinate of the food
       */
     public void setY(int y){
         this.y=y;
     }
      /**
       * Getter for x
-      * @return x
+      * @return x to get the x coordinate of the food
       */
     public int getX(){
         return x;

@@ -49,15 +49,15 @@ public class SnakeModel implements Imodel{
         SnakeThread snakeThread = new SnakeThread(this); //create a new SnakeThread object and pass it the SnakeModel object
         snakeThread.start(); //start the thread
         snake=new Snake(0,0,Direction.RIGHT);
-        goodfood= new Food(rand.nextInt(0,width),rand.nextInt(0,width));
-        badFood= new Food(rand.nextInt(10,width),rand.nextInt(10,height));
-        neutralFood= new Food(rand.nextInt(0,width),rand.nextInt(0,height));
+        goodfood= new Food(rand.nextInt(0,width/2),rand.nextInt(0,width/2));
+        badFood= new Food(rand.nextInt(10,width),rand.nextInt(10,height-1));
+        neutralFood= new Food(rand.nextInt(0,width),rand.nextInt(0,height-1));
         state=GameState.MENU;
     }
 
     /**
      * This method is used to get the snake object
-     * @return snake
+     * @return snake object
      */
     public Snake getSnake(){
         return snake;
@@ -83,21 +83,29 @@ public class SnakeModel implements Imodel{
     public Food getNeutralFood(){return neutralFood;}
     /**
      * This method is used to get the state of the game
-     * @return state
+     * @return state of the game
      */
     public GameState getState(){
         return state;
     }
     /**
      * This method is used to set the state of the game
-     * @param state
+     * @param state of the game
      */
     public void setState(GameState state){
         this.state=state;
     }
+     /**
+     * This method is used to get the direction of the snake
+     * @return direction
+     */
+
+     public Direction  getDirection(){
+        return snake.getDirection();
+    }
     /**
      * This method is used to set the direction of the snake
-     * @param direction
+     * @param direction of the snake
      */
     public void setDirection(Direction direction){
         snake.setDirection(direction);
@@ -112,21 +120,14 @@ public class SnakeModel implements Imodel{
     }
 
 
-    /**
-     * This method is used to get the direction of the snake
-     * @return direction
-     */
-
-    public Direction  getDirection(){
-        return snake.getDirection();
-    }
+   
     /**
      * This method is used to generate a food
      * @param food to generate a new position
      */
     private  void generateFood(Food food){
-        food.setX(rand.nextInt(0,width));
-        food.setY(rand.nextInt(0,width));
+        food.setX(rand.nextInt(0,width-2));
+        food.setY(rand.nextInt(0,height-2));
         changeCoordinatesOnCollission();
     }
 
@@ -165,7 +166,7 @@ public class SnakeModel implements Imodel{
    public void play(){
        time--;
        messageNumber=0;
-       //if(score==MAXIMUMSCORE && time>0) setState(GameState.WIN);
+       if(score==MAXIMUMSCORE && time>0) setState(GameState.WIN);
        if(isGameOver()){
            setState(GameState.GAMEOVER);
            System.out.println("GameOver you loose");
@@ -284,15 +285,17 @@ private void changeCoordinatesOnCollission() {
     s+=" The Good Food: "+getGoodFood().toString()+"\n";
     s+=" The bad Food: "+getBadFood().toString()+"\n";
     s+=" The neutral Food: "+getNeutralFood().toString()+"\n";
+    s+="time: "+time+"\n";
     s+="Score: "+getScore()+"\n";
     s+="State: "+getState()+"\n";
     return s;
   }
 }
 /* Zeit der Stickers
-* Jshell.exe --class-path .\out\production\snake\SnakeGame\
-* import Model.*;
+* Jshell.exe --class-path .\out\production\snake\
+* import SnakeGame.Model.*
  * die Art und Weise wie ich meine Bilder geladen habe
+ * cloc-1.98 Model in SnakeGame
  */
 
 /* TODO this Weekend

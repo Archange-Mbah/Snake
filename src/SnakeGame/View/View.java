@@ -21,28 +21,26 @@ public class View  extends PApplet implements Iview {
 
     private PImage menu,playing, gameOver, poison,wellDone,looser2,goodFood,neutralFood,winner,looser1;
 
-    private int message,frame;
-    private final int duration=100;
+    private int message;
 
-    private int r,g,b, yPosTop, yPosBottom;
+
+    private int  yPosTop, yPosBottom;
 
 
     String topText = "Welcome to snakeGame";
     String bottomText = "press enter to start";
+    String important= "IMPORTANT: you lose if you eat the "+'\n'+
+            " poison at the begining of the game";
 
     /**
      * The main method that runs the PApplet.Main method to start the game.
-     * @param c
+     * @param c is the controller
      */
 
     public void setController(Icontroller c){
         this.controller =c;
     }
 
-   /*  public static void main(String[] args){
-        PApplet.main(View.class);
-    }
-    */
 
     /**
      * The setup method is used to set the size of the game window.
@@ -66,24 +64,24 @@ public class View  extends PApplet implements Iview {
         textSize(24);
         yPosTop = -50; // Start above the canvas
         yPosBottom = height + 50;
-        looser2=loadImage("SnakeGame/images/looser2.jpg");
+        looser2=loadImage("looser2.jpg");
         looser2.resize(120,120);
-        looser1=loadImage("SnakeGame/images/looser1.jpg");
+        looser1=loadImage("looser1.jpg");
         looser1.resize(120,120);
-        gameOver=loadImage("SnakeGame/images/gameOver.jpg");
+        gameOver=loadImage("gameOver.jpg");
         gameOver.resize(width,height);
-        wellDone=loadImage("SnakeGame/images/welldone.jpg");
+        wellDone=loadImage("welldone.jpg");
         wellDone.resize(120, 120);
-        goodFood = loadImage("SnakeGame/images/good.jpg");
+        goodFood = loadImage("good.jpg");
         goodFood.resize(block,block);
-        poison=loadImage("SnakeGame/images/poison.jpg");
+        poison=loadImage("poison.jpg");
         poison.resize(block,block);
-        menu=loadImage("SnakeGame/images/menu.jpg");
-        playing=loadImage("SnakeGame/images/background.jpg");
+        menu=loadImage("menu.jpg");
+        playing=loadImage("background.jpg");
         playing.resize(width,height);
-        neutralFood=loadImage("SnakeGame/images/neutral.jpg");
+        neutralFood=loadImage("neutral.jpg");
         neutralFood.resize(block,block);
-        winner=loadImage("SnakeGame/images/win.jpg");
+        winner=loadImage("win.jpg");
         winner.resize(width,height);
         menu.resize(width,height);
     } 
@@ -130,8 +128,10 @@ public class View  extends PApplet implements Iview {
 
         // Display text at updated positions
         fill(51,255,255);
-        text(topText, width / 2, yPosTop);
-        text(bottomText, width / 2, yPosBottom);
+        text(topText, 400, yPosTop);
+        text(bottomText, 400, yPosBottom);
+        fill(255,0,0);
+        text(important, 400,yPosBottom+50);
     }
     /**
      * The method that resets the title screen of the game.
@@ -153,19 +153,31 @@ public class View  extends PApplet implements Iview {
      * @param x the x coordinates of the snake
      * @param y the y coordinates of the snake
      */
-    public void drawSnake(List<Integer> x, List<Integer> y,int c, int q){
-         for(int i=0; i<x.size(); i++){
-             if(i==0) fill(255,22,100) ;
-              else fill(0);
+    public void drawSnake(List<Integer> x, List<Integer> y,int c, int q) {
+        for (int i = 0; i < x.size(); i++) {
+            // stroke(0);// border color
+            if (i == 0)
+                fill(255, 0, 0);
+            else {
+                stroke(0);
+                fill(1, 50, 36);
+            }
 
-             super.rect(x.get(i)*block,y.get(i)*block, block,block);
-         }
-         textAlign(RIGHT);
-         textSize(30);
-         text("Time: "+q,10,10, width -130, 50);
-         text("Score: " +c,10,10, width -20, 50);
 
-    }
+            super.rect(x.get(i) * block, y.get(i) * block, block, block);
+        }
+        textAlign(RIGHT);
+
+
+
+            textSize(30);
+            text("Time: " + q, 10, 10, width - 130, 50);
+            text("Score: " + c, 10, 10, width - 20, 50);
+
+
+
+        }
+
     /**
      * The method that draws the food on the screen.
      * @param foodX the x coordinate of the food
@@ -173,7 +185,6 @@ public class View  extends PApplet implements Iview {
      */
     public void drawBadFood(int foodX, int foodY) {
         super.image(poison,foodX*block,foodY*block);
-        //super.rect(foodX * block, foodY * block, block, block);
     }
     /**
      * The method that draws the food on the screen.
@@ -228,9 +239,18 @@ public class View  extends PApplet implements Iview {
      */
     public void drawGameOver(){
         background(gameOver);
+        
+         textSize(30);
+         fill(255);
+        text("Press Enter ",(width/2)-300,height-200, width/2, 50);
     }
     /**
      * The method that draws the image of the winner screen.
      */
-    public void drawWinner(){ background(winner);}
+    public void drawWinner(){
+        background(winner);
+        textSize(30);
+        fill(255,0,0);
+        text("Press Enter  to play again",(width/2)-300,10, width/2, 50);
+    }
 }

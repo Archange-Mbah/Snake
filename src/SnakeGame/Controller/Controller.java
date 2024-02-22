@@ -11,14 +11,15 @@ import SnakeGame.View.Iview;
 public class Controller implements Icontroller {
 
     /**
-     * This method is used to set the view of the game
-     * @param view is the view of the game
+     * This is the view of the game, it is used to draw the different screens of the game.
      */
     private Iview view;
 
     /**
-     * This method is used to set the model of the game
-     * @param snake is the model of the game
+     * This is the model of the game, it is used to update the state of the game.
+     * it is responsible for updating the state of the game.
+     * It is also responsible for updating the score, time, and message of the game.
+     * it is responsible for updating the logic of the game.
      */
     private Imodel  snakeGame;
 
@@ -99,8 +100,8 @@ public class Controller implements Icontroller {
             snakeGame.setState(GameState.PLAYING);
         }
         else if((snakeGame.getState()==GameState.WIN || snakeGame.getState()==GameState.GAMEOVER) && input==0 ){
-            snakeGame.reset();
             view.resetMenu();
+            snakeGame.reset();
         }
        else if(input==1 && snakeGame.getDirection()!=Direction.RIGHT )
            snakeGame.setDirection(Direction.LEFT);
